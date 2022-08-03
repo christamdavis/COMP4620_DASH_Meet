@@ -1,8 +1,8 @@
 /*
 GUI Programming II HW 5
 Christa Davis
-DASH-Meet notesAndTasks.js
-Javascript for notes and tasks sections of dashboard
+DASH-Meet notes.js
+Javascript for notes sections of dashboard
 Sources: https://www.geeksforgeeks.org/how-to-create-notes-taking-site-using-html-bootstrap-and-javascript/
 */
 showNotes();

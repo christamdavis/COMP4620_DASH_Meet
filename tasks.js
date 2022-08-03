@@ -1,3 +1,10 @@
+/*
+GUI Programming II HW 5
+Christa Davis
+DASH-Meet tasks.js
+Javascript for tasks sections of dashboard
+*/
+
 var taskInput=document.getElementById("new-task");//Add a new task.
 var addButton=document.getElementsByTagName("button")[0];//first button
 var incompleteTaskHolder=document.getElementById("incomplete-tasks");//ul of #incomplete-tasks
@@ -143,7 +150,6 @@ var bindTaskEvents=function(taskListItem,checkBoxEventHandler){
 	var editButton=taskListItem.querySelector("button.edit");
 	var deleteButton=taskListItem.querySelector("button.delete");
 
-
 			//Bind editTask to edit button.
 			editButton.onclick=editTask;
 			//Bind deleteTask to delete button.
@@ -161,30 +167,8 @@ var bindTaskEvents=function(taskListItem,checkBoxEventHandler){
 	}
 
 
-
-
 //cycle over completedTasksHolder ul list items
 	for (var i=0; i<completedTasksHolder.children.length;i++){
 	//bind events to list items chldren(tasksIncompleted)
 		bindTaskEvents(completedTasksHolder.children[i],taskIncomplete);
 	}
-
-
-
-
-// Issues with usabiliy don't get seen until they are in front of a human tester.
-
-//prevent creation of empty tasks.
-
-//Shange edit to save when you are in edit mode.
-
-
-
-
-
-
-
-
-
-
-/* Basic Style */

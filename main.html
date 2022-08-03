@@ -1,12 +1,17 @@
-<!DOCTYPE html>
+<!--
+  COMP4620_DASH_Meet main.html
+  Christa Davis
+  Created: 7/26/2022
+  GUI Programming II
+-->
+!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <title>DASH-Meet</title>
         <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css'>
-        <link rel='stylesheet' href='https://unicons.iconscout.com/release/v3.0.6/css/line.css'>
         <link rel="stylesheet" href="./styles.css">
-        <script src="script2.js"></script>
+        <script src="tasks.js"></script>
     </head>
     <body>
         <section id="wrapper">
@@ -30,14 +35,31 @@
 
                                 <div id = "poll">
                                     <form class="pollForm" action="index.html" method="post">
-
-                                        <label for="Question1">Question 1:</label><br>
+                                        Add A Poll<br>
+                                        <label for="Question1">Enter Question Here:</label><br>
                                         <input type="text" id="fname" name="fname"><br>
-                                        <label for="lname">Last name:</label><br>
+
+                                        <label for="Question1">Answer 1</label><br>
+                                        <input type="text" id="fname" name="fname"><br>
+
+                                        <label for="Question1">Answer 2</label><br>
+                                        <input type="text" id="fname" name="fname"><br>
+
+                                        <label for="Question1">Answer 3</label><br>
+                                        <input type="text" id="fname" name="fname"><br>
+
+                                        <label for="lname">Default Answer or Refuse</label><br>
                                         <input type="text" id="lname" name="lname"><br>
 
+                                        Would you like to add a due date?<br>
                                         Yes:  <input  type="radio" name="vote" value="0" onclick="show_poll();"><br>
                                         No:  <input  type="radio" name="vote" value="1" onclick="show_poll();"><br>
+                                        <label for="start">Due Date:</label>
+
+                                        <input type="date" id="start" name="trip-start"
+                                               value="2018-07-22"
+                                               min="2018-01-01" max="2018-12-31">
+
                                         <!--
                                         https://phppot.com/php/php-poll-script/
                                         https://codeshack.io/poll-voting-system-php-mysql/
@@ -112,10 +134,8 @@
 
             </div>
         </section>
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js'></script>
         <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.jshttps://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js'></script>
-        <script src="script.js"></script>
-        <script src="script2.js"></script>
-        <script src="notesAndTasks.js"></script>
+        <script src="tasks.js"></script>
+        <script src="notes.js"></script>
     </body>
 </html>
