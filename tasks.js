@@ -79,7 +79,6 @@ var taskIncomplete=function(){
 		bindTaskEvents(listItem,taskCompleted);
 }
 
-//Set the click handler to the addTask function.
 addButton.onclick=addTask;
 addButton.addEventListener("click",addTask);
 

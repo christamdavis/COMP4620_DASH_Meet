@@ -21,7 +21,15 @@ body {
 .container {
   width: 100%;
 }
-
+#container{
+  width: 100%;
+  height: 100%;
+  background: #ccc;
+  padding: 100px;
+}
+.mdl-button--raised.mdl-button--colored{
+  background: cyan;
+}
 /* All items float left */
 li * {
   float: left;
