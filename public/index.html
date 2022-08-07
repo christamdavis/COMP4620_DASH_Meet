@@ -17,7 +17,108 @@ Example: firebase deploy --token "$FIREBASE_TOKEN"
         <title>DASH-Meet</title>
         <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css'>
         <link rel="stylesheet" href="./styles.css">
-        <script src="tasks.js"></script>
+        <script src="login.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-analytics.js";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            const firebaseConfig = {
+              apiKey: "AIzaSyABREyVE90esQItbRD5_8v-E1CvgkY7Iak",
+              authDomain: "dashmeet-1b074.firebaseapp.com",
+              projectId: "dashmeet-1b074",
+              storageBucket: "dashmeet-1b074.appspot.com",
+              messagingSenderId: "721119820782",
+              appId: "1:721119820782:web:88a6523afe698c35b6ecff",
+              measurementId: "G-5VM145F81E"
+            };
+
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+
+            import { initializeApp } from "firebase/app";
+            import { getAuth } from "firebase/auth";
+            import * as firebase from 'firebase/app'
+            import * as firebaseui from 'firebaseui'
+
+            /* the line below added in the styling for me */
+            import 'firebaseui/dist/firebaseui.css'
+            // See: https://firebase.google.com/docs/web/learn-more#config-object
+            const firebaseConfig = {
+              apiKey: "AIzaSyABREyVE90esQItbRD5_8v-E1CvgkY7Iak",
+              authDomain: "dashmeet-1b074.firebaseapp.com",
+              projectId: "dashmeet-1b074",
+              storageBucket: "dashmeet-1b074.appspot.com",
+              messagingSenderId: "721119820782",
+              appId: "1:721119820782:web:88a6523afe698c35b6ecff",
+              measurementId: "G-5VM145F81E"
+            };
+
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+
+
+            // Initialize Firebase Authentication and get a reference to the service
+            const auth = getAuth(app);
+
+
+
+          </script>
+
+    <script>
+      // FirebaseUI config.
+      var firebase = require('firebase');
+      var firebaseui = require('firebaseui');
+
+      // Initialize the FirebaseUI Widget using Firebase.
+      var ui = new firebaseui.auth.AuthUI(firebase.auth());
+      ui.start('#firebaseui-auth-container', {
+          signInOptions: [
+            firebase.auth.EmailAuthProvider.PROVIDER_ID
+            ],
+        // Other config options...
+      });
+
+      var uiConfig = {
+callbacks: {
+  signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+    // User successfully signed in.
+    // Return type determines whether we continue the redirect automatically
+    // or whether we leave that to developer to handle.
+    return true;
+  },
+  uiShown: function() {
+    // The widget is rendered.
+    // Hide the loader.
+    document.getElementById('loader').style.display = 'none';
+  }
+},
+// Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+signInFlow: 'popup',
+signInSuccessUrl: '<url-to-redirect-to-on-success>',
+signInOptions: [
+  // Leave the lines as is for the providers you want to offer your users.
+
+  firebase.auth.EmailAuthProvider.PROVIDER_ID,
+
+],
+// Terms of service url.
+tosUrl: '<your-tos-url>',
+// Privacy policy url.
+privacyPolicyUrl: '<your-privacy-policy-url>'
+};
+
+// The start method will wait until the DOM is loaded.
+ui.start('#firebaseui-auth-container', uiConfig);
+      </script>
     </head>
 
     <body>
@@ -32,38 +133,17 @@ Example: firebase deploy --token "$FIREBASE_TOKEN"
               </div>
           </div>
 
-          <div id="firebaseui-auth-container">here</div>
+          <!-- The surrounding HTML is left untouched by FirebaseUI.
+       Your app may use that space for branding, controls and other customizations.-->
+  <h1>Welcome to My Awesome App</h1>
+  <div id="firebaseui-auth-container"></div>
+  <div id="loader">Loading...</div>
 
 
           <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.jshttps://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js'></script>
           <script src="tasks.js"></script>
           <script src="notes.js"></script>
-          <script>
-                            // FirebaseUI config.
-                var uiConfig = {
-                'callbacks': {
-                'signInSuccess': function(currentUser, credential, redirectUrl) {
-                    console.log(currentUser.email, currentUser, credential)
-                    // Do something.
-                    // Return type determines whether we continue the redirect automatically
-                    // or whether we leave that to developer to handle.
-                    return false;
-                  }
-                },
-                'signInOptions': [
-                  // Leave the lines as is for the providers you want to offer your users.
-                  firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-                  firebase.auth.EmailAuthProvider.PROVIDER_ID
-                ],
-                // Terms of service url.
-                'tosUrl': '/'
-                };
 
-                // Initialize the FirebaseUI Widget using Firebase.
-                var ui = new firebaseui.auth.AuthUI(firebase.auth());
-                // The start method will wait until the DOM is loaded.
-                ui.start('#firebaseui-auth-container', uiConfig);
-          </script>
           <script type="module">
               // Import the functions you need from the SDKs you need
               import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-app.js";
@@ -86,6 +166,31 @@ Example: firebase deploy --token "$FIREBASE_TOKEN"
               // Initialize Firebase
               const app = initializeApp(firebaseConfig);
               const analytics = getAnalytics(app);
+
+              import { initializeApp } from "firebase/app";
+              import { getAuth } from "firebase/auth";
+
+              // See: https://firebase.google.com/docs/web/learn-more#config-object
+              const firebaseConfig = {
+                apiKey: "AIzaSyABREyVE90esQItbRD5_8v-E1CvgkY7Iak",
+                authDomain: "dashmeet-1b074.firebaseapp.com",
+                projectId: "dashmeet-1b074",
+                storageBucket: "dashmeet-1b074.appspot.com",
+                messagingSenderId: "721119820782",
+                appId: "1:721119820782:web:88a6523afe698c35b6ecff",
+                measurementId: "G-5VM145F81E"
+              };
+
+              // Initialize Firebase
+              const app = initializeApp(firebaseConfig);
+
+
+              // Initialize Firebase Authentication and get a reference to the service
+              const auth = getAuth(app);
+
+
+
             </script>
+
       </body>
   </html>

@@ -1,98 +1,36 @@
-<!--
-  COMP4620_DASH_Meet login.html
-  Christa Davis
-  Created: 7/26/2022
-  GUI Programming II
--->
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
-  <title>DASH-Meet</title>
-  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css'>
-  <link rel="stylesheet" href="./styles.css">
-  <script src="tasks.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <script src ="login.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-firestore.js"></script>
 </head>
 
 <body>
 
-  <section id="wrapper">
 
+  <section id="first_part_page">
 
-    <div class="p-4">
-      <div class="welcome">
-        <div class="content rounded-3 p-3">
-          <h1 class="fs-3">DASH-Meet</h1>
-          <p class="mb-0">Where collaboration meets speed and speed meets collaboration</p>
-        </div>
-      </div>
+          <form id="Subscribe_Form">
 
-      <section class="feature mt-4">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="feature-container rounded-2 p-3">
-              <h3 class="fs-6 mb-3">Log In</h3>
-
-
-              <form>
-
-                    <div class="container">
-                      <label for="uname"><b>Username</b></label>
-                      <input type="text" placeholder="Enter Username" name="uname" required>
-
-                      <label for="psw"><b>Password</b></label>
-                      <input type="password" placeholder="Enter Password" name="psw" required>
-
-                      <button type="submit">Login</button>
-
-                    </div>
-
-                    <div class="container">
-                      <span class="cancelbtn"><a style ="color:black;" href="index.html">Cancel</a></span>
-                      <span class="psw"><a style ="color:black;" href="#">Forgot password?</a></span><br>
-                      <span><a style = "color:black;" href="main.html">Debug Go to Dashboard</a></span>
-                    </div>
-            </form>
-            </div>
-          </div>
-        </div>
+              <input class="input_box" id="email_input" type="text" placeholder="Email">
+              <br>
+              <input class="input_box" id="input_password" type="text" placeholder="Password">
+              <br>
+              <input class="main_button" type="submit" id="submit_form" value="Submit" onclick="subscribeFirebase()">
+          </form>
       </section>
 
+  <script src ="login.js"></script>
 
+  <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-firestore.js"></script>
+</body>
 
-
-
-
-    </section>
-    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.jshttps://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js'></script>
-    <script src="tasks.js"></script>
-    <script src="notes.js"></script>
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-analytics.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-          apiKey: "AIzaSyABREyVE90esQItbRD5_8v-E1CvgkY7Iak",
-          authDomain: "dashmeet-1b074.firebaseapp.com",
-          projectId: "dashmeet-1b074",
-          storageBucket: "dashmeet-1b074.appspot.com",
-          messagingSenderId: "721119820782",
-          appId: "1:721119820782:web:88a6523afe698c35b6ecff",
-          measurementId: "G-5VM145F81E"
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-      </script>
-
-  </body>
-
-  </html>
+</html>
