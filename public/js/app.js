@@ -1,21 +1,16 @@
 /*
-  COMP4620_DASH_Meet index.html
-  Christa Davis
-  Created: 7/26/2022
-  GUI Programming II
-  Sources:
-  https://medium.com/@bariskarapinar/firebase-authentication-web-app-javascript-3165ebc92b68
-  https://github.com/bariskarapinar/FirebaseAuthWebAPP/blob/master/css/style.css
-  https://getbootstrap.com/docs/4.3/components/navbar/
+GUI Programming II HW 5
+Christa Davis
+DASH-Meet app.js
+Login, Sign Up, and Profile JS
+Sources:
+https://medium.com/@bariskarapinar/firebase-authentication-web-app-javascript-3165ebc92b68
+https://github.com/bariskarapinar/FirebaseAuthWebAPP/blob/master/css/style.css
 
-  Login JS
-  deployed at: dashmeet-1b074.web.app
 */
 
-/*
-Need to edit to get rid of special characters, numbers,
-but allow hyphens/dashes - use regex
-*/
+// xxxxxxxxxx Working For Sign Up Form xxxxxxxxxx
+// xxxxxxxxxx Full Name Validation xxxxxxxxxx
 function checkUserFullName(){
     var userSurname = document.getElementById("userFullName").value;
     var flag = false;
@@ -28,11 +23,7 @@ function checkUserFullName(){
         document.getElementById("userFullNameError").style.display = "none";
     }
 }
-
-/*
-Need to edit to get rid of special characters, numbers,
-but allow hyphens/dashes
-*/
+// xxxxxxxxxx User Surname Validation xxxxxxxxxx
 function checkUserSurname(){
     var userSurname = document.getElementById("userSurname").value;
     var flag = false;
@@ -45,7 +36,7 @@ function checkUserSurname(){
         document.getElementById("userSurnameError").style.display = "none";
     }
 }
-//Email validation - tested and works correctly
+// xxxxxxxxxx Email Validation xxxxxxxxxx
 function checkUserEmail(){
     var userEmail = document.getElementById("userEmail");
     var userEmailFormate = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -61,7 +52,7 @@ function checkUserEmail(){
         document.getElementById("userEmailError").style.display = "none";
     }
 }
-//Password Validation - works well and tested
+// xxxxxxxxxx Password Validation xxxxxxxxxx
 function checkUserPassword(){
     var userPassword = document.getElementById("userPassword");
     var userPasswordFormate = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}/;
@@ -77,10 +68,7 @@ function checkUserPassword(){
         document.getElementById("userPasswordError").style.display = "none";
     }
 }
-/*
-Need to edit to get rid of special characters, numbers,
-but allow hyphens/dashes - use regex
-*/
+// xxxxxxxxxx Check user bio characters. It'll use later xxxxxxxxxx
 function checkUserBio(){
     var userBio = document.getElementById("userBio").value;
     var flag = false;
@@ -90,7 +78,7 @@ function checkUserBio(){
         document.getElementById("userBioError").style.display = "none";
     }
 }
-// Create new user in firebase
+// xxxxxxxxxx Submitting and Creating new user in firebase authentication xxxxxxxxxx
 function signUp(){
     var userFullName = document.getElementById("userFullName").value;
     var userSurname = document.getElementById("userSurname").value;
@@ -149,7 +137,8 @@ function signUp(){
         });
     }
 }
-// Sign in email validation
+// xxxxxxxxxx Working For Sign In Form xxxxxxxxxx
+// xxxxxxxxxx Sign In Email Validation xxxxxxxxxx
 function checkUserSIEmail(){
     var userSIEmail = document.getElementById("userSIEmail");
     var userSIEmailFormate = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -165,7 +154,7 @@ function checkUserSIEmail(){
         document.getElementById("userSIEmailError").style.display = "none";
     }
 }
-//sign in password validation
+// xxxxxxxxxx Sign In Password Validation xxxxxxxxxx
 function checkUserSIPassword(){
     var userSIPassword = document.getElementById("userSIPassword");
     var userSIPasswordFormate = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}/;
@@ -181,7 +170,7 @@ function checkUserSIPassword(){
         document.getElementById("userSIPasswordError").style.display = "none";
     }
 }
-// is email or password already an account?
+// xxxxxxxxxx Check email or password exsist in firebase authentication xxxxxxxxxx
 function signIn(){
     var userSIEmail = document.getElementById("userSIEmail").value;
     var userSIPassword = document.getElementById("userSIPassword").value;
@@ -202,7 +191,7 @@ function signIn(){
                 title: 'Succesfully signed in',
             }).then((value) => {
                 setTimeout(function(){
-                    window.location.replace("./pages/profile.html");
+                    window.location.replace("./pages/dashboard.html");
                 }, 1000)
             });
         }).catch((error) => {
@@ -217,7 +206,8 @@ function signIn(){
         });
     }
 }
-//Profile data
+// xxxxxxxxxx Working For Profile Page xxxxxxxxxx
+// xxxxxxxxxx Get data from server and show in the page xxxxxxxxxx
 firebase.auth().onAuthStateChanged((user)=>{
     if (user) {
     //   User is signed in.
@@ -320,11 +310,11 @@ function signOut(){
         });
     }).catch(function(error) {
         // An error happened.
-        //let errorMessage = error.message;
-        //swal({
-          //  type: 'error',
-            //title: 'Error',
-          //  text: "Error",
-      //  })
+        let errorMessage = error.message;
+        swal({
+            type: 'error',
+            title: 'Error',
+            text: "Error",
+        })
     });
 }
