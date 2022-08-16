@@ -28,3 +28,69 @@ i{
 #errorMsg{
     color: red;
 }
+/*polls*/
+.choice {
+  height: 400px;
+  display: inline-block;
+  width: 100px;
+}
+.result {
+  height: 330px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.bar {
+  height: 0%;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.bar[data-choice="1"] {
+  background-color: red;
+}
+
+.bar[data-choice="2"] {
+  background-color: green;
+}
+
+.bar[data-choice="3"] {
+  background-color: blue;
+}
+.label {
+  height: 70px;
+  text-align: center;
+}
+form {
+	background-color: #fff;
+	max-width: 500px;
+	margin: 50px auto;
+	padding: 30px 20px;
+	box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.form-control {
+			text-align: left;
+			margin-bottom: 105px;
+    
+		}
+		/* Styling form-control Label */
+			.form-control label {
+				display: block;
+				margin-bottom: 10px;
+			}
+			.form-control input,
+					.form-control select,
+					.form-control textarea {
+						border: 1px solid #777;
+						border-radius: 2px;
+						font-family: inherit;
+						padding: 10px;
+						display: block;
+						width: 95%;
+					}
+#label-name{
+  font-weight: bold;
+}
+#label-choice{
+  font-weight: bold;
+}
