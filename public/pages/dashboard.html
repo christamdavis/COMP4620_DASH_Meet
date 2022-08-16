@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/sweetalert2.js"></script>
-    <script src="../js/tasklist.js"></script>
+    <!-- <script src="../js/tasklist.js"></script> -->
     <script src="../js/notes.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
@@ -30,6 +30,13 @@
    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+
+
+
+   <!-- Font Awesome CDN  -->
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- <link rel="stylesheet" href="../css/style.css"> -->
+
 
 </head>
 <body class="bg-light">
@@ -76,6 +83,52 @@
     <!--ADD YOUR POLL HTML HERE-->
     <!--ADD YOUR NOTES HTML HERE-->
     <!--ADD YOUR TASK LIST HTML HERE-->
+    <h1>Tasklist</h1>
+      <div class="container">  <!-- holds the entire Tasklist Feature -->
+          <div class="top"> <!-- for input form and submit-->
+              <form id="inputForm"> <!-- input form for users to enter info-->
+                  <label for="" class="form-label">Add your Tasks</label> <br>
+                  <textarea name="" id="addtaskinputfield" class="form-control" rows="1"></textarea> <br> <br> <!-- input field-->
+                  <button type="submit" class="btn btn-primary">ADD TASK</button> <!-- Submit button to add a task-->
+                  <div id="errorMsg"></div>
+              </form>
+          </div>
+          <div class="bottom"> <!-- saves all input-->
+              <h3>TODO</h3>
+              <div id="todos" > <!-- saves all todo tasks-->
+                  <div class="tasknum">
+                  <!-- <p>Task 1 </p>
+                  <span class="options">
+                      <i class="fa-regular fa-pen-to-square"></i>
+                      <i class="fa-regular fa-trash-can"></i>
+                      </span> -->
+                  </div>
+                  <div class="tasknum">
+                      <!-- <p>Task 2 </p>
+                      <span class="options">
+                          <i class="fa-regular fa-pen-to-square"></i>
+                          <i class="fa-regular fa-trash-can"></i>
+
+                      </span> -->
+                  </div>
+
+              </div>
+
+
+          </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- Scripts -->
     <script src="../js/tasklist.js"></script>
@@ -84,6 +137,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
 
     <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
