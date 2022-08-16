@@ -6,16 +6,6 @@ Javascript for notes sections of dashboard
 Sources: https://www.geeksforgeeks.org/how-to-create-notes-taking-site-using-html-bootstrap-and-javascript/
 */
 
-<<<<<<< Updated upstream
-=======
-/*
-GUI Programming II HW 5
-Christa Davis
-DASH-Meet notes.js
-Javascript for notes sections of dashboard
-Sources: https://www.geeksforgeeks.org/how-to-create-notes-taking-site-using-html-bootstrap-and-javascript/
-*/
->>>>>>> Stashed changes
 showNotes();
 let addBtn = document.getElementById("addBtn");
 addBtn.addEventListener("click", function(e) {
