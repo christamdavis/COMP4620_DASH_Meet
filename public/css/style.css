@@ -1,1 +1,30 @@
 /*ADD YOUR CSS HERE*/
+body{
+background-color: #cad2c5;
+margin: 0 50px;
+}
+
+#todos{
+    align-items: center;
+    width: 400px;
+
+}
+.tasknum{
+    /* display: flex; */
+    display: block;
+
+
+}
+
+.options{
+    display: flex;
+    gap: 25px;
+    padding-bottom: 10px;
+}
+i{
+    cursor: pointer;
+}
+
+#errorMsg{
+    color: red;
+}

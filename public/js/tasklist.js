@@ -3,15 +3,14 @@ GUI Programming II HW 5
 Christa Davis
 DASH-Meet tasklist.js
 Javascript for tasklist sections of dashboard
-Sources:
+Sources: https://www.freecodecamp.org/news/learn-crud-operations-in-javascript-by-building-todo-app/
 */
 
 /* ADD YOUR TASK LIST JS HERE*/
-
-let inputform = document.getElementById("inputForm"); //targetting inputform
-let taskinput = document.getElementById("addtaskinputfield"); //targetting text area input field
-let errorMsg = document.getElementById("errorMsg");
-let todos = document.getElementById("todos");
+var inputform = document.getElementById("inputForm"); //targetting inputform
+var taskinput = document.getElementById("addtaskinputfield"); //targetting text area input field
+var errorMsg = document.getElementById("errorMsg");
+var todos = document.getElementById("todos");
 
     inputform.addEventListener("submit", (e)=>{
     e.preventDefault(); //prevents referesh on button click each time
@@ -20,7 +19,7 @@ let todos = document.getElementById("todos");
 
 });
 
-let inputformValidation = () => {  //if else loop for empty task or entered info
+var inputformValidation = () => {  //if else loop for empty task or entered info
     if(taskinput.value === ""){  //if input field is blank then show error
         errorMsg.innerHTML="Task cannot be empty" //Following error message will be displayed
         console.log("failure");
@@ -33,15 +32,15 @@ let inputformValidation = () => {  //if else loop for empty task or entered info
     }
 };
 
-let data = {};  //empty object //this also pushes the info collected by acceptData function
+var data = {};  //empty object //this also pushes the info collected by acceptData function
 
-let acceptData = () => {        //function to collect info entered in input field
+var acceptData = () => {        //function to collect info entered in input field
     data["text"] = taskinput.value
     console.log(data); //displays the content taken.
     createTodo();
 };
 
-let createTodo = () => {
+var createTodo = () => {
     todos.innerHTML +=
     `
     <div class="tasknum">
@@ -57,11 +56,11 @@ let createTodo = () => {
 
 };
 
-let deleteTask = (e) => {
+var deleteTask = (e) => {
     e.parentElement.parentElement.remove(); //first parent element targets span and second targets the entier div that hold the task and it deletes it
 };
 
-let editTask = (e) => {
+var editTask = (e) => {
     taskinput.value = e.parentElement.previousElementSibling.innerHTML;
     e.parentElement.parentElement.remove();
 };
