@@ -28,184 +28,105 @@
    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
-   <!-- Font Awesome CDN  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- <link rel="stylesheet" href="../css/style.css"> -->
-
 
 </head>
-<body class="bg-light">
+<body >
 
     <!--Profile HTML-->
-    <div class="container-fluid">
-        <div class="row mx-1">
-            <div class="col-lg-6 col-md-6">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 ">
-                        <div id="profileSection">
-                              <div class="col-6 col-6 text-left">
-                                    <span class="h3" id="userPfFullName">FirstName</span>
-                                    <span class="h3" id="userPfSurname">LastName</span>
-                              </div>
-                              <div class="col-lg-12 col-md-10 text-left">
-                                    <button type="button" class="btn btn-outline-primary btn-block text-uppercase mb-3" onclick="showEditProfileForm()">
-                                    Edit Profile<small></small></button>
-                                    <button type="button" class="btn btn-outline-secondary text-uppercase" onclick="signOut()">
-                                    Sign Out<small></small></button>
-                              </div>
-                        </div>
-                        <div id="editProfileForm">
-                              <h2 class="h2 text-center text-dark mb-3">Edit Profile</h2>
-                              <div class="form-group">
-                                    <label for="userFullName">Name<span class="text-danger ml-1">*</span></label>
-                                    <input type="text" class="form-control" id="userFullName" onblur="checkUserFullName()" placeholder="FirstName">
-                              </div>
-                              <div class="form-group">
-                                    <label for="userSurname">Surname<span class="text-danger ml-1">*</span></label>
-                                    <input type="text" class="form-control" id="userSurname" onblur="checkUserSurname()" placeholder="LastName">
-                                    <small id="userSurnameError" class="form-text text-danger">Please fill the field.</small>
-                              </div>
-                              <button type="button" class="btn btn-outline-primary btn-block text-uppercase mb-3" onclick="saveProfile()">Save</button>
-                              <button type="button" class="btn btn-outline-secondary btn-block text-uppercase" onclick="hideEditProfileForm()">Cancel</button>
-                        </div>
-                    </div>
-
-                </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-6 ">
+            <div id="profileSection">
+                  <div class="col-6 col-6 text-left">
+                        <span class="h3" id="userPfFullName">FirstName</span>
+                        <span class="h3" id="userPfSurname">LastName</span>
+                  </div>
+                  <div class="col-lg-12 col-md-10 text-left">
+                        <button type="button" class="btn btn-outline-secondary text-uppercase" onclick="signOut()">
+                        Sign Out<small></small></button>
+                  </div>
             </div>
         </div>
+
     </div>
 
+
     <!--ADD YOUR POLL HTML HERE-->
-    <section class="feature mt-4">
-                    <div class="row">
-                        <div class="col-lg-3">
-                            <div class="feature-container rounded-2 p-3">
-
-
-                                <div id = "poll">
-                                  <body>
-<h1>POLL</h1>
-<!--https://codepen.io/laurakelly/pen/RPgmwP-->
-<!-- Create Form -->
-<form id="form">
-
-  <!-- choice -->
-  <div class="form-control">
-    <label for="name" id="label-name">
-      Question
-    </label>
-
-    <!-- Input Type Text -->
-    <form>
-  <!-- <label for="q1">Choice 1:</label><br>
-
-  <input type="text" id="q3" name="q1"><br> -->
-</form>
-    <input type="text"
-      id="name"
-      placeholder="Enter the question to be asked" />
-  </div>
-<!-- choice -->
-  <div class="form-control">
-    <label for="choice1" id="label-choice">
-      Choice 1
-    </label>
-
-    <!-- Input Type Text -->
-    <input type="text"
-      id="choice1"
-      placeholder="Enter your first choice" />
-  </div>
-  <!-- choice -->
-      <div class="form-control">
-        <label for="choice1" id="label-choice">
-          Choice 2
-        </label>
-
-        <!-- Input Type Text -->
-        <input type="text"
-          id="choice2"
-          placeholder="Enter your second choice" />
-      </div>
-      <!-- choice -->
-          <div class="form-control">
-            <label for="choice3" id="label-choice">
-              Choice 3
-            </label>
-
-            <!-- Input Type Text -->
-            <input type="text"
-              id="choice3"
-              placeholder="Enter your third choice" />
+<section class="feature mt-4">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="feature-container rounded-2 " id="pollcontainer">
+                <h1>POLL</h1>
+                <!--https://codepen.io/laurakelly/pen/RPgmwP-->
+                <form id="form">
+                <div class="form-control" id="pollform">
+                    <label for="name" id="label-name">Question</label>
+                    <input type="text" id="name" placeholder="Enter the question to be asked" />
+                </div>
+                <div class="form-control" id="pollform">
+                    <input type="text" id="choice1" placeholder="Enter your first choice" />
+                </div>
+                <div class="form-control" id="pollform">
+                    <input type="text" id="choice2" placeholder="Enter your second choice" />
+                </div>
+                <div class="form-control" id="pollform">
+                    <input type="text" id="choice3" placeholder="Enter your third choice" />
+                </div>
+                </form>
+                <div id="choices">
+                    <div class="choice">
+                        <div class="result">
+                            <div class="bar" data-choice="1"></div>
+                        </div>
+                        <div class="label">
+                            <p>Choice 1</p>
+                            <button data-choice="1">Vote</button>
+                        </div>
+                    </div>
+                    <div class="choice">
+                        <div class="result">
+                            <div class="bar" data-choice="2"></div>
+                        </div>
+                        <div class="label">
+                            <p>Choice 2</p>
+                            <button data-choice="2">Vote</button>
+                        </div>
+                    </div>
+                    <div class="choice">
+                        <div class="result">
+                            <div class="bar" data-choice="3"></div>
+                        </div>
+                        <div class="label">
+                            <p>Choice 3</p>
+                            <button data-choice="3">Vote</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
           </div>
+        </div>
+</section>
 
-<div id="choices">
-<div class="choice">
-  <div class="result">
-    <div class="bar" data-choice="1"></div>
-  </div>
-  <div class="label">
-    <p>Choice 1</p>
-    <button data-choice="1">Vote</button>
-  </div>
-</div>
-<div class="choice">
-  <div class="result">
-    <div class="bar" data-choice="2"></div>
-  </div>
-  <div class="label">
-    <p>Choice 2</p>
-    <button data-choice="2">Vote</button>
-  </div>
-</div>
-<div class="choice">
-  <div class="result">
-    <div class="bar" data-choice="3"></div>
-  </div>
-  <div class="label">
-    <p>Choice 3</p>
-    <button data-choice="3">Vote</button>
-
-  </div>
-</div>
-</div>
-<!-- partial -->
-<script  src="./polls.js"></script>
-
-</body>
-                </section>
     <!--ADD YOUR NOTES HTML HERE-->
-    <div class="container my-3">
+    <div class="container my-3" id="notescontainer">
        <h1>Take your Notes here</h1>
        <div class="card">
            <div class="card-body">
-               <h5 class="card-title">
-                   Add a Note
-
-               </h5>
+               <h5 class="card-title">Add a Note</h5>
                <div class="form-group">
-                   <textarea class="form-control"
-                       id="addTxt" rows="3">
-                   </textarea>
+                   <textarea class="form-control" id="addTxt" rows="3"></textarea>
                </div>
-               <button class="btn btn-primary"
-                   id="addBtn" style=
-                   "background-color:green">
-                   Add Note
-               </button>
+               <button class="btn btn-primary" id="addBtn" style="background-color:green">Add Note</button>
            </div>
        </div>
-       <hr>
-       <h1>Your Notes</h1>
-       <hr>
+       <hr><h1>Your Notes</h1><hr>
 
-       <div id="notes" class=
-           "row container-fluid">
-       </div>
+       <div id="notes" class="row container-fluid"></div>
    </div>
     <!--ADD YOUR TASK LIST HTML HERE-->
-    <h1>Tasklist</h1>
-      <div class="container">  <!-- holds the entire Tasklist Feature -->
+
+      <div class="container my-3"id="tasklistcontainer">  <!-- holds the entire Tasklist Feature -->
+        <h1>Tasklist</h1>
           <div class="top"> <!-- for input form and submit-->
               <form id="inputForm"> <!-- input form for users to enter info-->
                   <label for="" class="form-label">Add your Tasks</label> <br>
@@ -218,19 +139,8 @@
               <h3>TODO</h3>
               <div id="todos" > <!-- saves all todo tasks-->
                   <div class="tasknum">
-                  <!-- <p>Task 1 </p>
-                  <span class="options">
-                      <i class="fa-regular fa-pen-to-square"></i>
-                      <i class="fa-regular fa-trash-can"></i>
-                      </span> -->
                   </div>
                   <div class="tasknum">
-                      <!-- <p>Task 2 </p>
-                      <span class="options">
-                          <i class="fa-regular fa-pen-to-square"></i>
-                          <i class="fa-regular fa-trash-can"></i>
-
-                      </span> -->
                   </div>
 
               </div>

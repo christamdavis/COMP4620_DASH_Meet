@@ -1,7 +1,7 @@
 /*ADD YOUR CSS HERE*/
 body{
-background-color: #cad2c5;
-margin: 0 50px;
+background-color: #white;
+
 }
 
 #todos{
@@ -68,10 +68,25 @@ form {
 	padding: 30px 20px;
 	box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
 }
+
+#pollform{
+margin-bottom: 100px;
+}
+#pollcontainer{
+  background-color:lightgray;
+}
+#notescontainer{
+  background-color: lightgray;
+  float:left;
+}
+#tasklistcontainer{
+  background-color: lightgray;
+  float:left;
+}
 .form-control {
 			text-align: left;
-			margin-bottom: 105px;
-    
+		/*	*/
+
 		}
 		/* Styling form-control Label */
 			.form-control label {

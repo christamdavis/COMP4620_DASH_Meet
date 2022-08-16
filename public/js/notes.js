@@ -4,6 +4,7 @@ Christa Davis
 DASH-Meet notes.js
 Javascript for notes sections of dashboard
 Sources: https://www.geeksforgeeks.org/how-to-create-notes-taking-site-using-html-bootstrap-and-javascript/
+https://stackoverflow.com/questions/39976818/how-to-insert-new-child-data-in-firebase-web-app
 */
 
 showNotes();
