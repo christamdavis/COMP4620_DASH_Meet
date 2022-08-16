@@ -1,6 +1,6 @@
 <!--
   COMP4620_DASH_Meet dashboard.html
-  Christa Davis
+  Christa Davis Samin Basir Mohammadazar Khalifa
   Created: 7/26/2022
   GUI Programming II
 
@@ -76,6 +76,104 @@
     </div>
 
     <!--ADD YOUR POLL HTML HERE-->
+    <section class="feature mt-4">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="feature-container rounded-2 p-3">
+
+
+                                <div id = "poll">
+                                  <body>
+<h1>POLL</h1>
+<!--https://codepen.io/laurakelly/pen/RPgmwP-->
+<!-- Create Form -->
+<form id="form">
+
+  <!-- choice -->
+  <div class="form-control">
+    <label for="name" id="label-name">
+      Question
+    </label>
+
+    <!-- Input Type Text -->
+    <form>
+  <!-- <label for="q1">Choice 1:</label><br>
+
+  <input type="text" id="q3" name="q1"><br> -->
+</form>
+    <input type="text"
+      id="name"
+      placeholder="Enter the question to be asked" />
+  </div>
+<!-- choice -->
+  <div class="form-control">
+    <label for="choice1" id="label-choice">
+      Choice 1
+    </label>
+
+    <!-- Input Type Text -->
+    <input type="text"
+      id="choice1"
+      placeholder="Enter your first choice" />
+  </div>
+  <!-- choice -->
+      <div class="form-control">
+        <label for="choice1" id="label-choice">
+          Choice 2
+        </label>
+
+        <!-- Input Type Text -->
+        <input type="text"
+          id="choice2"
+          placeholder="Enter your second choice" />
+      </div>
+      <!-- choice -->
+          <div class="form-control">
+            <label for="choice3" id="label-choice">
+              Choice 3
+            </label>
+
+            <!-- Input Type Text -->
+            <input type="text"
+              id="choice3"
+              placeholder="Enter your third choice" />
+          </div>
+
+<div id="choices">
+<div class="choice">
+  <div class="result">
+    <div class="bar" data-choice="1"></div>
+  </div>
+  <div class="label">
+    <p>Choice 1</p>
+    <button data-choice="1">Vote</button>
+  </div>
+</div>
+<div class="choice">
+  <div class="result">
+    <div class="bar" data-choice="2"></div>
+  </div>
+  <div class="label">
+    <p>Choice 2</p>
+    <button data-choice="2">Vote</button>
+  </div>
+</div>
+<div class="choice">
+  <div class="result">
+    <div class="bar" data-choice="3"></div>
+  </div>
+  <div class="label">
+    <p>Choice 3</p>
+    <button data-choice="3">Vote</button>
+
+  </div>
+</div>
+</div>
+<!-- partial -->
+<script  src="./polls.js"></script>
+
+</body>
+                </section>
     <!--ADD YOUR NOTES HTML HERE-->
     <div class="container my-3">
        <h1>Take your Notes here</h1>
@@ -145,6 +243,7 @@
     <script src="../js/tasklist.js"></script>
     <script src="../js/app.js"></script>
     <script src="../js/notes.js"></script>
+    <script src="../js/polls.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
