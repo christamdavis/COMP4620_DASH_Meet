@@ -47,15 +47,15 @@ i{
 }
 
 .bar[data-choice="1"] {
-  background-color: red;
+  background-color: white;
 }
 
 .bar[data-choice="2"] {
-  background-color: green;
+  background-color: gray;
 }
 
 .bar[data-choice="3"] {
-  background-color: blue;
+  background-color: darkgray;
 }
 .label {
   height: 70px;
