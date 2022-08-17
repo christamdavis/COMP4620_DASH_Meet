@@ -15,6 +15,29 @@ addBtn.addEventListener("click", function(e) {
     if(notes == null) notesObj = [];
     else notesObj = JSON.parse(notes);
     notesObj.push(newText.value);
+
+
+    let user = firebase.auth().currentUser;
+    let uid;
+    if(user != null){
+        uid = user.uid;
+    }
+    var userFN = notes;
+    firebase.database().ref(uid).child('Notes').set({Notes:userFN});
+    var firebaseRef = firebase.database().ref();
+    //var Notes = {
+    //    newNote: "test"
+    //}
+    //firebaseRef.child(uid).set(Notes);
+
+    swal({
+        type: 'successfull',
+        title: 'Update successfull',
+        text: 'Note added.',
+    }).then((value) => {
+
+    });
+
     localStorage.setItem("notes", JSON.stringify(notesObj));
     newText.value = "";
     showNotes();

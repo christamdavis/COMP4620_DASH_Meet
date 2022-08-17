@@ -52,7 +52,31 @@ var createTodo = () => {
                 </span>
     </div>
     `;
+
+
+    let user = firebase.auth().currentUser;
+    let uid;
+    if(user != null){
+        uid = user.uid;
+    }
+    var userFN = todos.innerHTML+"";
+    firebase.database().ref(uid).child('Tasks').set({Tasks:userFN});
+    var firebaseRef = firebase.database().ref();
+    //var Notes = {
+    //    newNote: "test"
+    //}
+    //firebaseRef.child(uid).set(Notes);
+
+    swal({
+        type: 'successfull',
+        title: 'Update successfull',
+        text: 'Note added.',
+    }).then((value) => {
+
+    });
+
     taskinput.value=''; //after adding the task reset the form by making the input field blank
+
 
 };
 
