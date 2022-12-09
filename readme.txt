@@ -1,5 +1,6 @@
 DASH-Meet Notes, Poll, and Task List Collaboration Website
 Created by Christa Davis, Mohammadazar Khalifa, and Samin Basir
+This implementation is not complete
 
 Project Console: https://console.firebase.google.com/project/dashmeet-1b074/overview
 Hosting URL: https://dashmeet-1b074.web.app
